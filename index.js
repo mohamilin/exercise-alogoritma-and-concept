@@ -46,8 +46,40 @@ while (number <= 20){
 
 /** 
  * Nomor 4
+ * Palindrome
+ * Jika dibaca dari kanan sama dengan dibaca dari kiri
+ * contoh : kasur rusak (kanan) = kasur rusak (kiri) maka hasilnya true
  */
-/**  */
+
+ function palindrome(text){
+    let newText = text.split('').reverse().join('')
+    if(newText === text) {
+        return true;
+    }
+    return false;
+ }
+
+ console.log(palindrome('kasur rusak'));    //true
+ console.log(palindrome('makan nasi'));     //false
+/** 
+ * Nomor 5
+ * Mengalikan element yang berdekatan dan mengambil yang menghasilkan nilai terbesar
+ *  
+ */
+function adjacentElementsProduct(inputArray) {
+    let arr = [];
+    inputArray.reduce((initial, next) => {
+        const product = initial * next;
+        arr.push(product);
+        return next;
+    })
+    
+    return Math.max(...arr)
+  }
+
+  console.log(adjacentElementsProduct([ 1, 100, 3, 4, 5, 6, 7]))    //output : 300
+  console.log(adjacentElementsProduct([ 1, 2, 3, 4, 5, 6, 7]))    //output : 42
+  
 /**  */
 /**  */
 /**  */
